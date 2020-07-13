@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ReactDOM from "react-dom";
+
+import "@progress/kendo-theme-default/dist/all.css";
+
+import categories from "./categories.json";
+import products from "./products.json";
+
+import { DropDownList } from "@progress/kendo-react-dropdowns";
+import { Grid, GridColumn } from "@progress/kendo-react-grid";
+
+import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
+
+import "./pdfstyles.css";
+
+export default class App extends Component {
+  exportPDFWithMethod = () => {
+    savePDF(ReactDOM.findDOMNode(this.container), {
+      paperSize: "auto",
+      margin: 40,
+      fileName: `Report for ${new Date().getFullYear()}`,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={() => this.exportPDFWithMethod()}>Pdf Çıktı</button>
+
+        <section ref={(container) => (this.container = container)}>
+          <h1>İstanbul Ağaç Ünite Şeker ığdır</h1>
+
+          <p>
+            <DropDownList
+              data={categories}
+              dataItemKey="CategoryID"
+              textField="CategoryName"
+            />
+          </p>
+
+          <Grid data={products}>
+            <GridColumn field="ProductName" />
+            <GridColumn field="UnitPrice" />
+            <GridColumn field="UnitsInStock" />
+            <GridColumn field="Discontinued" />
+          </Grid>
+        </section>
+      </div>
+    );
+  }
 }
-
-export default App;
