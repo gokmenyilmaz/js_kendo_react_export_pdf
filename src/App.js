@@ -14,38 +14,19 @@ import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 
 import "./pdfstyles.css";
 
-export default class App extends Component {
-  exportPDFWithMethod = () => {
-    savePDF(ReactDOM.findDOMNode(this.container), {
-      paperSize: "auto",
-      margin: 40,
-      fileName: `Report for ${new Date().getFullYear()}`,
-    });
-  };
+import JsKendoPdf from "./JsKendoPdf";
+import JsPdfExport from "./JsPdfExport";
 
+export default class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.exportPDFWithMethod()}>Pdf Çıktı</button>
 
-        <section ref={(container) => (this.container = container)}>
-          <h1>İstanbul Ağaç Ünite Şeker ığdır</h1>
-
-          <p>
-            <DropDownList
-              data={categories}
-              dataItemKey="CategoryID"
-              textField="CategoryName"
-            />
-          </p>
-
-          <Grid data={products}>
-            <GridColumn field="ProductName" />
-            <GridColumn field="UnitPrice" />
-            <GridColumn field="UnitsInStock" />
-            <GridColumn field="Discontinued" />
-          </Grid>
-        </section>
+        <JsPdfExport/>
+        <h1>----------------------------------------------</h1>
+        <JsKendoPdf/>
+       
+      
       </div>
     );
   }

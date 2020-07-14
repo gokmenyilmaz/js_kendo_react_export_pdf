@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { font } from "./font1";
 import jsPDF from "jspdf";
 
-export default class jsPdfExport extends Component {
+export default class JsPdfExport extends Component {
   exportPDF = () => {
     var doc = new jsPDF();
 
@@ -21,10 +21,10 @@ export default class jsPdfExport extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.exportPDF()}>Pdf Çıktı</button>
+        <button onClick={() => this.exportPDF()}>JSPDF Pdf Çıktı</button>
 
         <section ref={(container) => (this.container = container)}>
-          <h1>İstanbul Ağaç Ünite Şeker ığdır</h1>
+          <h1>Jspdf - İstanbul</h1>
         </section>
       </div>
     );
