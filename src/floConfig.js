@@ -2,6 +2,7 @@ export const floConfig={
     placeholderText: 'Tahlil detaylarını giriniz',
     charCounterCount: true,
     heightMin:100,
+    
     toolbarSticky: false,
     toolbarButtons: {
         'moreText': {

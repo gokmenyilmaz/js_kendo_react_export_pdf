@@ -18,18 +18,24 @@ export default class FroalaView1 extends Component {
   }
 
   exportPDF = () => {
+    // let html = this.myRef.current.editor.html.get();
   
-    let html = this.myRef.current.editor.html.get();
+    // var doc = new jsPDF();
+
+    // doc.addFileToVFS("times-normal.ttf", font);
+    // doc.addFont("times-normal.ttf", "times", "normal");
+    // doc.setFont("times"); // set font
+    // doc.setFontSize(50);
   
-    var doc = new jsPDF();
+    // doc.fromHTML(html);
 
-    doc.addFileToVFS("times-normal.ttf", font);
-    doc.addFont("times-normal.ttf", "times", "normal");
 
-    doc.setFont("times"); // set font
-    doc.setFontSize(50);
+    // console.log(doc);
 
-    doc.fromHTML(html, 10, 60);
+    var htmlString ="<html><body ><label>İstanbul INPUT TYPE</label></body></html>";
+    var doc = new jsPDF('landscape','pt');
+    doc.fromHTML(htmlString,100,100,{});
+    doc.output('datauri');
 
     doc.save("a1.pdf");
     
