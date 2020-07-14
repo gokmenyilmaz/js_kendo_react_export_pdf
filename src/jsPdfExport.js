@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { font } from "./font1";
 import jsPDF from "jspdf";
 
-export default class JsPdf extends Component {
+export default class jsPdfExport extends Component {
   exportPDF = () => {
     var doc = new jsPDF();
 
