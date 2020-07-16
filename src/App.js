@@ -17,13 +17,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Html2Pdf />
-        <h1>-----------------------------------------</h1>
-        {/* <FroalaView1 />
-        <h1>----------------------------------------------</h1>
-        <JsPdfExport />
-        <h1>----------------------------------------------</h1>
-        <JsKendoPdf /> */}
+        <JsKendoPdf />
+      
       </div>
     );
   }

@@ -19,28 +19,15 @@ export default class JsKendoPdf extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{fontFamily:'Times-Roman', fontWeight:'bold'}}>
         <button onClick={() => this.exportPDFWithMethod()}>
           Kendo Pdf Çıktı
         </button>
 
-        <section ref={(container) => (this.container = container)}>
-          <h1>Kendo - İstanbul Ağaç Ünite Şeker ığdır</h1>
+        <section  ref={(container) => (this.container = container)}>
+          <h1 >İstanbul Ağaç</h1>
 
-          <p>
-            <DropDownList
-              data={categories}
-              dataItemKey="CategoryID"
-              textField="CategoryName"
-            />
-          </p>
-
-          <Grid data={products}>
-            <GridColumn field="ProductName" />
-            <GridColumn field="UnitPrice" />
-            <GridColumn field="UnitsInStock" />
-            <GridColumn field="Discontinued" />
-          </Grid>
+ 
         </section>
       </div>
     );
