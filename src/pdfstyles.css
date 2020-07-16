@@ -1,21 +1,24 @@
 @font-face {
     font-family: "Times-Roman";
     font-weight: normal;
-    src: url("times.ttf") format("truetype");
+    src: url("fonts/times.ttf") format("truetype");
   }
   @font-face {
     font-family: "Times-Roman";
     font-weight: bold;
-    src: url("times.ttf") format("truetype");
+    src: url("fonts/timesbd.ttf") format("truetype");
   }
-  @font-face {
-    font-family: "Times-Roman";
-    font-style: italic;
-    src: url("times.ttf") format("truetype");
-  }
+
   @font-face {
     font-family: "Times-Roman";
     font-weight: bold;
     font-style: italic;
-    src: url("times.ttf") format("truetype");
+    src: url("fonts/timesbi.ttf") format("truetype");
   }
+
+  @font-face {
+    font-family: "Times-Roman";
+    font-style: italic;
+    src: url("fonts/timesi.ttf") format("truetype");
+  }
+ 

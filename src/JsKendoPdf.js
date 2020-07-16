@@ -19,15 +19,49 @@ export default class JsKendoPdf extends Component {
 
   render() {
     return (
-      <div style={{fontFamily:'Times-Roman', fontWeight:'bold'}}>
+      <div >
         <button onClick={() => this.exportPDFWithMethod()}>
           Kendo Pdf Çıktı
         </button>
 
-        <section  ref={(container) => (this.container = container)}>
-          <h1 >İstanbul Ağaç</h1>
+        <section ref={(container) => (this.container = container)}>
+          <div
+            style={{
+              fontFamily: "Times-Roman",
+            }}
+          >
+            İstanbul Ağaç - normal
+          </div>
 
- 
+
+          <div
+            style={{
+              fontFamily: "Times-Roman",
+              fontStyle: "italic",
+            }}
+          >
+            İstanbul Ağaç - italic
+          </div>
+
+          <div
+            style={{
+              fontFamily: "Times-Roman",
+              fontWeight: "bold"
+            }}
+          >
+            İstanbul Ağaç - bold
+          </div>
+
+          <div
+            style={{
+              fontFamily: "Times-Roman",
+              fontWeight: "bold",
+              fontStyle: "italic",
+            }}
+          >
+            İstanbul Ağaç - bold italic
+          </div>
+
         </section>
       </div>
     );
